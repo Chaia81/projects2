@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Student Administration</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+
+    <header>
+
+        <!-- Navigation Bar -->
+
+        <nav class="navigation">
+
+            <a href="/">KEA</a>
+            <a href="info">Students</a>
+
+        </nav>
+
+    </header>
+
+
+    <div class="container">
+        <h1>Students</h1>
+
+        <h3>Enrolled students at KEA</h3>
+
+        <button class="btn btn-create">Create</button>
+
+        <br>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Enrollment date</th>
+                <th>Edit</th>
+            </tr>
+
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}">
+                <td th:text="${student.firstName}">
+                <td th:text="${student.lastName}">
+                <td th:text="${student.enrollmentDate}">
+                <td>
+                    <a th:href="@{/student(id=${student.id})}">
+                        <button class="btn btn-details">Details</button>
+                        <button class="btn btn-ed">Edit</button>
+                        <button class="btn btn-del">Delete</button>
+                    </a>
+                </td>
+
+            </tr>
+
+            <!--
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>19/5-2020</td>
+                <td><button>Click me</button></td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>11/6-2013</td>
+                <th><button>Click me</button></th>
+            </tr>
+            <tr>
+                <td>Karl</td>
+                <td>Johnson</td>
+                <td>11/6-2013</td>
+                <td><button>Click me</button></td>
+            </tr>
+            -->
+
+        </table>
+
+    </div>
+
+
+
+</body>
+</html>
