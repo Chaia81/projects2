@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Create Student</title>
+</head>
+<body>
+
+<!-- Header Section -->
+
+<header>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navigation">
+        <a href="/">KEA</a>
+        <a href="overview">Students</a>
+    </nav>
+
+</header>
+
+
+<div class="container">
+    <h1>Create Student</h1>
+    <form th:action="@{/createStudent}" th:object="${student}" method="post">
+
+        <!--<table> -->
+            <tr>
+                <th>First Name:</th>
+                <td>
+                    <label>
+                        <input type="text" th:field="*{firstName}" placeholder="First name" />
+                    </label>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <th>Last Name:</th>
+                <td>
+                    <label>
+                        <input type="text" th:field="*{lastName}" placeholder="Last name"/>
+                    </label>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <th>Enrollment date:</th>
+                <td>
+                    <label>
+                        <input type="date" th:field="*{enrollmentDate}"/>
+                    </label>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <th>Cpr:</th>
+                <td>
+                    <label>
+                        <input type="text" th:field="*{cpr}" placeholder="Cpr"/>
+                    </label>
+                </td>
+            </tr>
+        <!-- </table> -->
+        <br>
+        <input type="submit" value="Create" class="btn btn-create">
+    </form>
+</div>
+
+</body>
+</html>

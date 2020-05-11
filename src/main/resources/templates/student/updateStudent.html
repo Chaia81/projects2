@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Update Student</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+
+    <header>
+
+        <!-- Navigation Bar -->
+
+        <nav class="navigation">
+            <a href="/">KEA</a>
+            <a href="info">Students</a>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <h1>Update</h1>
+
+        <form class="container" th:action="@{/updateStudent}" th:object="${student}" method="post">
+            <input type="hidden" name="id" th:value="${student.id}"/>
+
+            <!-- <table> -->
+                <tr>
+                    <th>First Name</th>
+                    <td>
+                        <label>
+                            <input type="text" name="firstName" th:value="*{firstName}"/>
+                        </label>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <th>Last Name</th>
+                    <td>
+                        <label>
+                            <input type="text" name="lastName" th:value="*{lastName}"/>
+                        </label>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <th>Enrollment date</th>
+                    <td>
+                        <label>
+                            <input type="date" name="enrollmentDate" th:value="*{#dates.format(enrollmentDate, 'yyyy-MM-dd')}"/>
+                        </label>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <th>Cpr</th>
+                    <td>
+                        <label>
+                            <input type="text" name="cpr" th:value="*{cpr}"/>
+                        </label>
+                    </td>
+                </tr>
+        <!-- <p th:text="${student.id}"></p> -->
+        <!--<p th:text="${student.firstName}"></p>
+        <p th:text="${student.lastName}"></p>
+        <p th:text="${student.enrollmentDate}"></p>
+        <p th:text="${student.cpr}"></p>-->
+
+        <br>
+    <!-- </table> -->
+    <input type="submit" value="Update" class="btn btn-create">
+</Form>
+</div>
+
+</body>
+</html>

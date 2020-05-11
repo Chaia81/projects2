@@ -12,10 +12,11 @@ public class DatabaseConnectionManager {
     private static String user;
     private static String password;
     private static String url;
-    private static Connection conn;
+    private static Connection conn; //Database
 
     public static Connection getDatabaseConnection() {
-        if(conn != null) return conn;
+        if(conn != null)
+            return conn;
 
         Properties prop = new Properties();
         try {

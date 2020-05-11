@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
@@ -14,10 +14,8 @@
         <!-- Navigation Bar -->
 
         <nav class="navigation">
-
             <a href="/">KEA</a>
-            <a href="info">Students</a>
-
+            <a href="overview">Students</a>
         </nav>
 
     </header>
@@ -28,8 +26,11 @@
 
         <h3>Enrolled students at KEA</h3>
 
-        <button class="btn btn-create">Create</button>
+        <a href="/createStudent">
+            <button class ="btn btn-create">Create</button>
+        </a>
 
+        <br>
         <br>
 
         <table>
@@ -38,22 +39,27 @@
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Enrollment date</th>
-                <th>Edit</th>
+                <th>Options</th>
             </tr>
 
-            <tr th:each="student : ${students}">
-                <td th:text="${student.id}">
-                <td th:text="${student.firstName}">
-                <td th:text="${student.lastName}">
-                <td th:text="${student.enrollmentDate}">
+            <tr th:each="student : ${student}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <th th:text="${#dates.format(student.enrollmentDate, 'yyyy-MM-dd')}"></th>
                 <td>
-                    <a th:href="@{/student(id=${student.id})}">
-                        <button class="btn btn-details">Details</button>
-                        <button class="btn btn-ed">Edit</button>
-                        <button class="btn btn-del">Delete</button>
-                    </a>
+                    <!-- <a th:href="@{/student(id=${student.id})}"><button class="btn">Details</button></a> -->
+                        <a th:href="@{/details(id=${student.id})}">
+                            <button class="btn btn-details">Details</button>
+                        </a>
+                        <a th:href="@{/updateStudent(id=${student.id})}">
+                            <button class ="btn btn-ed">Edit</button>
+                        </a>
+                        <a th:href="@{/deleteStudent(id=${student.id})}">
+                            <button class="btn btn-del">Delete</button>
+                        </a>
+                    <!-- </a> -->
                 </td>
-
             </tr>
 
             <!--

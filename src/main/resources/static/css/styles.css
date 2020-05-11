@@ -28,7 +28,8 @@ nav a {
     font-size: 1.2em;
 }
 
-/* table styles */
+/* ---------- Table styles ---------- */
+
 /* https://www.w3schools.com/html/html_tables.asp */
 
 table {
@@ -46,6 +47,7 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+/* ---------- Input fields ---------- */
 
 input {
     display: block;
@@ -62,6 +64,7 @@ input {
 }
 
 /* ---------- Buttons ---------- */
+
 /* https://www.w3schools.com/css/css3_buttons.asp */
 
 .btn {
@@ -106,9 +109,6 @@ input {
     width: 20%;
 }
 
-/* input fields */
-
-
 /* ---------- Footer ---------- */
 
 .footer {
@@ -117,6 +117,5 @@ input {
     text-align: right;
     color: #666666;
     font-style: italic;
-
 }
 

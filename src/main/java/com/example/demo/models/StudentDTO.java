@@ -4,21 +4,24 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-public class Student {
+public class StudentDTO {
     public int id;
     public String firstName;
     public String lastName;
     @DateTimeFormat(pattern = "yyyy-MM-dd") // needed for input field on html pages (in order to serve the right format)
     public Date enrollmentDate;
+    public String cpr;
 
-    public Student(int id, String firstName, String lastName, Date enrollmentDate) {
+    public StudentDTO(int id, String firstName, String lastName, Date enrollmentDate, String cpr) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.enrollmentDate = enrollmentDate;
+        this.cpr = cpr;
     }
 
-    public Student() {}
+    public StudentDTO() {
+    }
 
     public int getId() {
         return id;
@@ -52,13 +55,22 @@ public class Student {
         this.enrollmentDate = enrollmentDate;
     }
 
+    public String getCpr() {
+        return cpr;
+    }
+
+    public void setCpr(String cpr) {
+        this.cpr = cpr;
+    }
+
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentDTO{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", enrollmentDate=" + enrollmentDate +
+                ", cpr=" + cpr +
                 '}';
     }
 }

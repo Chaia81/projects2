@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Delete studentDTO</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+
+    <header>
+
+        <!-- Navigation Bar -->
+
+        <nav class="navigation">
+            <a href="/">KEA</a>
+            <a href="overview">Students</a>
+        </nav>
+
+    </header>
+
+    <div class="container">
+
+        <h1>Delete</h1>
+
+        <h2>Are you sure you want to delete?</h2>
+
+        <Form th:action="@{student/deleteStudent}" method="post">
+            <input type="hidden" name="id" th:value="${student.id}"/>
+
+            <span th:text="${student.firstName}"></span>
+            <span th:text="${student.lastName}"></span>
+
+            <p>
+                <span>
+                    <a href="/overview">
+                        <button class="btn btn-create w" type="submit">Yes</button>
+                    </a>
+                </span>
+                <span>
+                    <a href="/overview" class="btn btn-del w" type="submit">No</a>
+                </span>
+            </p>
+
+        </Form>
+    </div>
+</body>
+</html>
