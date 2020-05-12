@@ -27,10 +27,10 @@ CREATE TABLE `student` (
   `first_name` varchar(45) NOT NULL,
   `last_name` varchar(75) NOT NULL,
   `enroll_date` date NOT NULL,
-  `cpr` int NOT NULL,
+  `cpr` varchar(20) NOT NULL,
   PRIMARY KEY (`student_id`),
   UNIQUE KEY `cpr_UNIQUE` (`cpr`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'Maria','Wagner','2019-08-21',241281),(2,'Ida','Johansen','2019-08-21',41083);
+INSERT INTO `student` VALUES (1,'Maria','Wagner','2019-08-21','241281'),(9,'Ida','Wendel','2019-09-21','373957483'),(10,'Jacob','Bay','2019-08-23','484595928'),(11,'Peter','Plys','2020-05-06','47596960'),(12,'Anders','And','2020-05-07','84302398'),(13,'Jakob','Nissen','2020-03-19','48595948'),(14,'Peter','Pan','2020-05-07','4758548'),(15,'Mickey','Mouse','2020-05-08','4450892'),(16,'Andersine','And','2020-05-06','484390058'),(17,'Minnie','Mouse','2020-05-07','594947482');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-11 11:12:35
+-- Dump completed on 2020-05-12  2:07:28
